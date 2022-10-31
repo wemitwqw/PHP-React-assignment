@@ -7,17 +7,19 @@ use app\core\Controller;
 
 class MainController extends Controller {
     public function indexAction() {
-        $db = new Db();
-        $data = $db->row('SELECT name FROM items');
-        
-        echo 'index controller';
+        $result = $this->model->getItems();
+        echo json_encode($result);
     }
 
     public function addItemAction() {
         $form = 2;
 
+        $params = [
+            'id' => 2,
+        ];
+
         $db = new Db();
-        $data = $db->column('SELECT name FROM items WHERE id='.$form);
+        $data = $db->column('SELECT id, name FROM items WHERE id = :id', $params);
         debug($data);
 
         echo 'add item controller';
