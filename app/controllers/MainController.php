@@ -7,7 +7,9 @@ use app\core\Controller;
 
 class MainController extends Controller {
     public function indexAction() {
-        $result = $this->model->getItems();
+        $result = $this->service->getAllItems();
+        // debug($result);
+        header('Content-type:application/json;charset=utf-8');
         echo json_encode($result);
     }
 
@@ -23,7 +25,6 @@ class MainController extends Controller {
         // debug($data);
 
         if ($_POST) {
-            
             
             foreach ($_POST as $key => $value) {
                 echo $key.'='.$value.'<br>';

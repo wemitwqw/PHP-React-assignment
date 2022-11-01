@@ -5,19 +5,26 @@ namespace app\core;
 abstract class Controller {
 
     public $route;
-    public $model;
+    // public $model;
+    public $service;
 
     public function __construct($route) {
         $this->route = $route;
-        $this->model = $this->loadModel($route['controller']);
-        // debug($this->model);
+        // $this->model = $this->loadModel($route['controller']);
+        $this->service = $this->loadService($route['controller']);
     }
 
-    public function loadModel($model) {
-        $path = 'app\models\\'.ucfirst($model);
+    // public function loadModel($model) {
+    //     $path = 'app\models\\'.ucfirst($model);
+    //     if (class_exists($path)) {
+    //         return new $path;
+    //     }
+    // }
+    
+    public function loadService($service) {
+        $path = 'app\services\\'.ucfirst($service);
         if (class_exists($path)) {
             return new $path;
         }
-        
     }
 }
