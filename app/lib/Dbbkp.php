@@ -16,10 +16,13 @@ class Db {
         $stmt = $this->db->prepare($sql);
         if (!empty($params)) {
             foreach ($params as $key => $value) {
+                // echo $key.'='.$value;
                 $stmt->bindValue(':'.$key, $value);
             }
         }
+        // exit;
         $stmt->execute();
+        // $query = $this->db->query($sql);
         return $stmt;
     }
 

@@ -2,7 +2,6 @@
 require 'app/lib/Dev.php';
 
 use app\core\Router;
-use app\core\Db;
 
 spl_autoload_register(function ($class) {
     $path = str_replace('\\', '/', $class.'.php');

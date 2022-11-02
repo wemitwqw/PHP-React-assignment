@@ -1,31 +1,26 @@
 <?php
 
 namespace app\controllers;
-
-use app\lib\Db;
 use app\core\Controller;
 
 class MainController extends Controller {
     public function indexAction() {
         $result = $this->service->getAllItems();
-        // debug($result);
+        foreach ($result as $item) {
+            
+        }
         header('Content-type:application/json;charset=utf-8');
         echo json_encode($result);
     }
 
     public function addItemAction() {
-        // $form = 2;
-
         // $params = [
         //     'id' => 2,
         // ];
-
         // $db = new Db();
         // $data = $db->column('SELECT id, name FROM items WHERE id = :id', $params);
         // debug($data);
-
         if ($_POST) {
-            
             foreach ($_POST as $key => $value) {
                 echo $key.'='.$value.'<br>';
             };

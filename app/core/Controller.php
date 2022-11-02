@@ -22,7 +22,7 @@ abstract class Controller {
     // }
     
     public function loadService($service) {
-        $path = 'app\services\\'.ucfirst($service);
+        $path = 'app\services\\'.ucfirst($service).'Service';
         if (class_exists($path)) {
             return new $path;
         }
