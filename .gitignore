@@ -1,1 +1,14 @@
+# dependencies
 /scandiwebreact/node_modules
+/scandiwebreact/.pnp
+/scandiwebreact/.pnp.js
+/scandiwebreact/coverage
+/scandiwebreact/build
+/scandiwebreact/.DS_Store
+/scandiwebreact/.env.local
+/scandiwebreact/.env.development.local
+/scandiwebreact/.env.test.local
+/scandiwebreact/.env.production.local
+/scandiwebreact/npm-debug.log*
+/scandiwebreact/yarn-debug.log*
+/scandiwebreact/yarn-error.log*
