@@ -2,6 +2,6 @@
 
 namespace app\core;
 
-abstract class Model {
-
+abstract class Model extends QueryBuilder {
+    
 }

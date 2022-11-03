@@ -12,3 +12,4 @@
 /scandiwebreact/npm-debug.log*
 /scandiwebreact/yarn-debug.log*
 /scandiwebreact/yarn-error.log*
+.DS_Store
