@@ -23,13 +23,31 @@ class Db {
         return $stmt;
     }
 
-    public function row($sql, $params = []) {
+    public function rows($sql, $params = []) {
         $result = $this->query($sql, $params);
-        return $result->fetchAll(PDO::FETCH_ASSOC);
+        return $result->fetchAll(PDO::FETCH_OBJ);
     }
 
     public function column($sql, $params = []) {
         $result = $this->query($sql, $params);
         return $result->fetchColumn();
+    }
+
+    public function delete($sql, $params = []) {
+        $result = $this->query($sql, $params);
+        return $result;
+    }
+
+    public function save($sql, $params = []) {
+        // $query = $this->db->prepare($sql);
+        // if (!empty($params)) {
+        //     foreach ($params as $key => $value) {
+        //         $query->bindParam(':'.$key, $value);
+        //     }
+        // }
+        // $result = $query->execute();
+        $result = $this->query($sql, $params);
+        // debug($result);
+        return $result;
     }
 }

@@ -9,4 +9,8 @@ return [
         'controller' => 'main',
         'action' => 'addItem'
     ],
+    'delete' => [
+        'controller' => 'main',
+        'action' => 'deleteItem'
+    ],
 ];
