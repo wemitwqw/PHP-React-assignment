@@ -11,21 +11,21 @@ function AddItem({setHomeView}) {
     useEffect(() => {
         setHomeView(false)   
     },[])
-
+ 
     const addItemHandler = (item) => {
-        fetch('http://scandiweb/add', 
-        { 
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: item
-        }
-        ).then(res => { 
-            console.log(res)
-            // navigate("/")
-            return res;
-        })
+        console.log(item.toString()) 
+        // fetch('http://129.151.223.209:3001/add', 
+        // { 
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/x-www-form-urlencoded'
+        //     },
+        //     body: item
+        // }
+        // ).then(res => { 
+        //     navigate("/")
+        //     return res;
+        // })
     }
 
     return (

@@ -29,7 +29,7 @@ function Header({onMassDelete, homeView}) {
                                 )
                             }
 
-                            {
+                            {/* {
                                 homeView===true ? 
                                 (
                                 <>
@@ -73,7 +73,65 @@ function Header({onMassDelete, homeView}) {
                                     </Button>
                                 </>
                                 )
+                            } */}
+
+                            {
+                                homeView===true ? 
+                                (
+                                <>
+                                    <Grid sx={{ marginLeft: "auto"}}>
+                                        <button
+                                        className="buttons"
+                                        >
+                                            <Link
+                                            style={{color: 'black', textDecoration: 'none'}}
+                                            sx={{ my: 1, mx: 1.5 }} 
+                                            href="/add"
+                                            >
+                                            ADD
+                                        </Link>
+                                        </button>
+                                    </Grid>
+                                    
+                                    <Grid sx={{ ml: 1}}>
+                                        <button
+                                            className="buttons"
+                                            onClick={onMassDelete}
+                                            id="delete-product-btn"
+                                            >
+                                            MASS DELETE
+                                        </button>
+                                    </Grid>
+                                </>
+                                )
+                                :
+                                (
+                                <>
+                                    <Grid sx={{ marginLeft: "auto"}}>
+                                        <button form='product_form'
+                                        className="buttons"
+                                        >
+                                            Save
+                                        </button>
+                                    </Grid>
+                                    <Grid sx={{ ml: 1}}>
+                                        <button form='product_form'
+                                        className="buttons"
+                                        >
+                                            <Link
+                                            style={{color: 'black', textDecoration: 'none'}}
+                                            sx={{ my: 1, mx: 1.5}}
+                                            href="/"
+                                            >
+                                                Cancel
+                                            </Link>
+                                        </button>
+                                    </Grid>
+
+                                </>
+                                )
                             }
+                            
                         </Toolbar>
                     </AppBar>
                 </Grid>

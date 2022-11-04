@@ -11,7 +11,7 @@ function Home({checked, setChecked, setHomeView}) {
     const [loadedItems, setLoadedItems] = useState([])
 
     useEffect(() => {
-        fetch('http://scandiweb/').then(res => { 
+        fetch('http://129.151.223.209:3001/').then(res => { 
         return res.json(); 
         }).then(data => {
         setIsLoading(false);
@@ -45,7 +45,7 @@ function Home({checked, setChecked, setHomeView}) {
             justifyContent="center"
             sx={{ flexGrow: 1, gap: 1 }}
             >
-                {loadedItems.map(({id, sku, name, price, size, weight, dimensions}) => (
+                {loadedItems.map(({id, sku, name, price, type, attr}) => (
                     <Card 
                     key={id}
                     sx={{ width: '25%'}}
@@ -63,7 +63,7 @@ function Home({checked, setChecked, setHomeView}) {
                                     {price} $
                                 </Typography>
                                 <Typography>
-                                    {size ? 'Size: '+size+' MB' : weight ? 'Weight: '+weight+' KG' : 'Dimension: '+dimensions}
+                                    {type==='dvd' ? 'Size: '+attr+' MB' : type==='book' ? 'Weight: '+attr+' KG' : 'Dimension: '+attr}
                                 </Typography>
                             </Grid>
                         </CardContent>

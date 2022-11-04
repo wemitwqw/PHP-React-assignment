@@ -12,11 +12,11 @@ function App() {
   const handleMassDelete = (e) => {
     e.preventDefault();
     makeDeleteRequest(checked)
-  }
+  } 
 
   const makeDeleteRequest = (checkedItems) => {
     if(checkedItems.length>0){
-      fetch('http://scandiweb/delete', 
+      fetch('http://129.151.223.209:3001/delete', 
       { 
         method: 'DELETE',
         body: JSON.stringify({ids: checkedItems})
